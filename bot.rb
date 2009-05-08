@@ -28,7 +28,7 @@ feed_thread = Thread.new do
   while(true != false)
     begin
       # fetch the feed
-      feed = Feedzirra::Feed.fetch_and_parse("http://search.twitter.com/search.atom?q=+%23sor09")
+      feed = Feedzirra::Feed.fetch_and_parse("http://search.twitter.com/search.atom?q=+%23euruko")
 
       feed.entries.reverse.each do |entry|
         tweet = Tweets.find_or_create_by_twitter_id(
@@ -41,11 +41,11 @@ feed_thread = Thread.new do
 
         if tweet.tweeted.blank?
           origin = tweet.link.gsub(/^http.*com\//,"").gsub(/\/statuses\/\d*/,"")
-          message = tweet.title.gsub(/#sor09/i, "")
+          message = tweet.title.gsub(/#euruko/i, "")
           if origin.size + message.size  <= 135
             twitter.status(:post, "RT @#{origin}: #{message}")
           else
-            twitter.status(:post, "RT @#{origin} tagged 'sor09': #{tweet.link}")
+            twitter.status(:post, "RT @#{origin} tagged 'euruko': #{tweet.link}")
           end
           puts "#{Time.now.to_s(:long)}" # poor mans logging
           tweet.update_attribute(:tweeted, true)
