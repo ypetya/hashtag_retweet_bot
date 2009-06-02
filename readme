@@ -14,6 +14,9 @@ Dependencies
 - ActiveRecord for ORM
 
 Run create_db_table.rb to create a database table for the app
-Ruby bot.rb to run the bot
+
+To run the bot:
+
+    ruby bot.rb <tag_to_follow>
 
 You'll want to setup the db connections to suit your own db and add a twitter login to config/bot.yml

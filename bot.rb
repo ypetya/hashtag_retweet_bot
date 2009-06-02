@@ -3,7 +3,6 @@ require 'twibot' # our bot helper
 require 'active_record' # db
 require 'feedzirra' # feed helper
 
-
 ActiveRecord::Base.establish_connection(
   :adapter => "mysql",
   :username => "root",
@@ -15,7 +14,6 @@ ActiveRecord::Base.establish_connection(
 class Tweets < ActiveRecord::Base
 end
 
-
 ###
 #  What we want the bot to do
 ###
@@ -24,12 +22,17 @@ end
 #  3. send the tweets and mark them as 'tweeted'
 #
 
+def get_tweets_tagged_with(tag)
+  Feedzirra::Feed.fetch_and_parse("http://search.twitter.com/search.atom?q=+%23#{tag}")
+end
+
+tag = ARGV.first
+
 feed_thread = Thread.new do
   while(true != false)
     begin
       # fetch the feed
-      feed = Feedzirra::Feed.fetch_and_parse("http://search.twitter.com/search.atom?q=+%23euruko")
-
+      feed = get_tweets_tagged_with(tag)
       feed.entries.reverse.each do |entry|
         tweet = Tweets.find_or_create_by_twitter_id(
                   :twitter_id => entry.id,
@@ -41,11 +44,14 @@ feed_thread = Thread.new do
 
         if tweet.tweeted.blank?
           origin = tweet.link.gsub(/^http.*com\//,"").gsub(/\/statuses\/\d*/,"")
-          message = tweet.title.gsub(/#euruko/i, "")
+          # strip only the # from the tag in the middle of the tweet (since it is part of the tweet)
+          message = tweet.title.gsub(Regexp.new("#(#{tag})(\S+)", Regexp::IGNORECASE), '\1\2')
+          # strip the whole tag at the end of the tweet (since it is just for tagging)
+          message = message.gsub(Regexp.new("#(#{tag})\s*$", Regexp::IGNORECASE), '')
           if origin.size + message.size  <= 135
             twitter.status(:post, "RT @#{origin}: #{message}")
           else
-            twitter.status(:post, "RT @#{origin} tagged 'euruko': #{tweet.link}")
+            twitter.status(:post, "RT @#{origin} tagged '#{tag}': #{tweet.link}")
           end
           puts "#{Time.now.to_s(:long)}" # poor mans logging
           tweet.update_attribute(:tweeted, true)
