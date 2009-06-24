@@ -44,10 +44,10 @@ feed_thread = Thread.new do
 
         if tweet.tweeted.blank?
           origin = tweet.link.gsub(/^http.*com\//,"").gsub(/\/statuses\/\d*/,"")
-          # strip only the # from the tag in the middle of the tweet (since it is part of the tweet)
-          message = tweet.title.gsub(Regexp.new("#(#{tag})(\S+)", Regexp::IGNORECASE), '\1\2')
           # strip the whole tag at the end of the tweet (since it is just for tagging)
-          message = message.gsub(Regexp.new("#(#{tag})\s*$", Regexp::IGNORECASE), '')
+          message = tweet.title.gsub(%r{#(#{tag})\s*$}i, '').rstrip
+          # strip only the # anywhere else (since it is part of the tweet)
+          message = message.gsub(%r{#(#{tag})}i, '\1')
           if origin.size + message.size  <= 135
             twitter.status(:post, "RT @#{origin}: #{message}")
           else
