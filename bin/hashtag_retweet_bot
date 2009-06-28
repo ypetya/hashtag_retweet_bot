@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require File.join(File.dirname(__FILE__), '..', 'lib', 'bot')
+
+if ARGV.length != 1
+  puts "Usage: hashtag_retweet_bot [tag_to_watch]"
+  exit
+end
+
+tag = ARGV.first
+if tag.downcase == 'create_db_table'
+  require File.join(File.dirname(__FILE__), '..', 'create_db_table')
+else
+  bot = HashtagRetweetBot.new(tag)
+  bot.run
+end

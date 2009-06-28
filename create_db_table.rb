@@ -1,13 +1,9 @@
 require 'rubygems'
 require 'active_record'
+require 'yaml'
 
-ActiveRecord::Base.establish_connection(
-  :adapter => "mysql",
-  :username => "root",
-  :host => "127.0.0.1",
-  :password => "",
-  :database => "twibot"
-)
+adapter_attrs = YAML.load(File.open('config/database.yml') { |f| f.read })
+ActiveRecord::Base.establish_connection(adapter_attrs)
 
 ActiveRecord::Schema.define do
   create_table(:tweets, :force => true) do |t|
