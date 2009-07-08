@@ -1,6 +1,7 @@
 bin/hashtag_retweet_bot
 create_db_table.rb
 feed.rb
+hashtag_retweet_bot.gemspec
 lib/bot.rb
 Manifest
 Rakefile

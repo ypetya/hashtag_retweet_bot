@@ -12,8 +12,8 @@ Create the database that will hold the tweets:
 
 Create a directory where you will run the bot from:
 
-    mkdir bot_for_my_conference
-    cd bot_for_my_conference
+    mkdir -p bot_for_my_conference/config
+    cd config/bot_for_my_conference
     touch database.yml bot.yml
 
 Put the credentials for the twitter account in _bot.yml_:

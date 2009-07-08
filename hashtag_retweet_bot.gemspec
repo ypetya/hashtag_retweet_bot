@@ -2,17 +2,17 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hashtag_retweet_bot}
-  s.version = "0.1"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Balint Erdi"]
-  s.date = %q{2009-06-28}
+  s.date = %q{2009-07-08}
   s.default_executable = %q{hashtag_retweet_bot}
   s.description = %q{Script that listens to a tag and retweets messages with that tag. Originally made for Scotland on Rails '09 by Mark Connell (http://github.com/rubaidh)}
   s.email = %q{balint@bucionrails.com}
   s.executables = ["hashtag_retweet_bot"]
   s.extra_rdoc_files = ["bin/hashtag_retweet_bot", "lib/bot.rb", "README.markdown"]
-  s.files = ["bin/hashtag_retweet_bot", "create_db_table.rb", "feed.rb", "lib/bot.rb", "Manifest", "Rakefile", "README.markdown", "hashtag_retweet_bot.gemspec"]
+  s.files = ["bin/hashtag_retweet_bot", "create_db_table.rb", "feed.rb", "hashtag_retweet_bot.gemspec", "lib/bot.rb", "Manifest", "Rakefile", "README.markdown"]
   s.homepage = %q{http://github.com/balinterdi/hashtag_retweet_bot}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Hashtag_retweet_bot", "--main", "README.markdown"]
   s.require_paths = ["lib"]
@@ -25,17 +25,26 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<twibot>, [">= 0.1.7"])
+      s.add_runtime_dependency(%q<activerecord>, [">= 0"])
+      s.add_runtime_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
       s.add_development_dependency(%q<twibot>, [">= 0.1.7"])
-      s.add_development_dependency(%q<active_record>, [">= 0"])
+      s.add_development_dependency(%q<activerecord>, [">= 0"])
       s.add_development_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
     else
       s.add_dependency(%q<twibot>, [">= 0.1.7"])
-      s.add_dependency(%q<active_record>, [">= 0"])
+      s.add_dependency(%q<activerecord>, [">= 0"])
+      s.add_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
+      s.add_dependency(%q<twibot>, [">= 0.1.7"])
+      s.add_dependency(%q<activerecord>, [">= 0"])
       s.add_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
     end
   else
     s.add_dependency(%q<twibot>, [">= 0.1.7"])
-    s.add_dependency(%q<active_record>, [">= 0"])
+    s.add_dependency(%q<activerecord>, [">= 0"])
+    s.add_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
+    s.add_dependency(%q<twibot>, [">= 0.1.7"])
+    s.add_dependency(%q<activerecord>, [">= 0"])
     s.add_dependency(%q<pauldix-feedzirra>, [">= 0.0.12"])
   end
 end
