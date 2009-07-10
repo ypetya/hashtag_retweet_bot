@@ -6,9 +6,13 @@ A bot that retweets all tweets tagged by a certain tag. Ideal for conferences, m
 
     gem install balinterdi-hashtag_retweet_bot --source http://gems.github.com
 
-Create the database that will hold the tweets:
+Create the database:
 
     mysqladmin create my_conference
+
+And create the table that will hold the tweets:
+
+    ruby <path/to/the/gem>/create_db_table.rb
 
 Create a directory where you will run the bot from:
 

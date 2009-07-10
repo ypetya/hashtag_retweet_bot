@@ -30,7 +30,6 @@ class HashtagRetweetBot
         begin
           # fetch the feed
           feed = get_tweets_tagged_with(@tag)
-          puts "XXX Feed entries length: #{feed.entries.length}"
           feed.entries.reverse.each do |entry|
             tweet = Tweets.find_or_create_by_twitter_id(
                       :twitter_id => entry.id,
