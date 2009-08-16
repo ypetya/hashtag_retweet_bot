@@ -2,7 +2,7 @@
 
 A bot that retweets all tweets tagged by a certain hashtag. Ideal for conferences, meetup groups, communities, etc.
 
-As an example, let's say you want to retweet every twitt found with the hashtag #icecream every 5 minutes (300 seconds). This gem will let you do it as easily as running:
+As an example, let's say you want to retweet every twitt found with the hashtag #icecream every 5 minutes (300 seconds). This ruby gem will let you do it as easily as running:
 
     hashtag_retweet_bot icecream 300
 
