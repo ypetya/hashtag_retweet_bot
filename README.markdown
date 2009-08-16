@@ -4,7 +4,7 @@ A bot that retweets all tweets tagged by a certain tag. Ideal for conferences, m
 
 ## Installation
 
-    gem install balinterdi-hashtag_retweet_bot --source http://gems.github.com
+    gem install jaimeiniesta-hashtag_retweet_bot --source http://gems.github.com
 
 Create the database:
 
@@ -43,4 +43,4 @@ Now the only thing left to do is to run the bot:
 
 Original idea and script by [Mark Connell](http://github.com/mconnell) for Scotland on Rails 2009. Customization for Euruko '09 by [Jaime Iniesta](http://github.com/jaimeiniesta). Some improvements and gemification by [Balint Erdi](http://github.com/balinterdi).
 
-Please send feedback and bug reports to <balint@bucionrails.com>
+Please send feedback and bug reports to <jaimeiniesta@gmail.com>

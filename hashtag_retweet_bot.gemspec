@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Balint Erdi"]
+  s.authors = ["Balint Erdi", "Jaime Iniesta"]
   s.date = %q{2009-07-08}
   s.default_executable = %q{hashtag_retweet_bot}
   s.description = %q{Script that listens to a tag and retweets messages with that tag. Originally made for Scotland on Rails '09 by Mark Connell (http://github.com/rubaidh)}
