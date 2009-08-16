@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('hashtag_retweet_bot', '0.1.1') do |p|
+Echoe.new('hashtag_retweet_bot', '0.1.2') do |p|
   p.description    = "Script that listens to a tag and retweets messages with that tag. Originally made for Scotland on Rails '09 by Mark Connell (http://github.com/rubaidh)"
   p.url            = "http://github.com/jaimeiniesta/hashtag_retweet_bot"
   p.author         = "Jaime Iniesta"

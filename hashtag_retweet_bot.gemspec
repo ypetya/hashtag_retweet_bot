@@ -2,18 +2,18 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hashtag_retweet_bot}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Balint Erdi", "Jaime Iniesta"]
-  s.date = %q{2009-07-08}
+  s.date = %q{2009-08-16}
   s.default_executable = %q{hashtag_retweet_bot}
   s.description = %q{Script that listens to a tag and retweets messages with that tag. Originally made for Scotland on Rails '09 by Mark Connell (http://github.com/rubaidh)}
-  s.email = %q{balint@bucionrails.com}
+  s.email = %q{jaimeiniesta@gmail.com}
   s.executables = ["hashtag_retweet_bot"]
   s.extra_rdoc_files = ["bin/hashtag_retweet_bot", "lib/bot.rb", "README.markdown"]
   s.files = ["bin/hashtag_retweet_bot", "create_db_table.rb", "feed.rb", "hashtag_retweet_bot.gemspec", "lib/bot.rb", "Manifest", "Rakefile", "README.markdown"]
-  s.homepage = %q{http://github.com/balinterdi/hashtag_retweet_bot}
+  s.homepage = %q{http://github.com/jaimeiniesta/hashtag_retweet_bot}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Hashtag_retweet_bot", "--main", "README.markdown"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{hashtag_retweet_bot}

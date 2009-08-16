@@ -2,15 +2,20 @@
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'bot')
 
-if ARGV.length != 1
-  puts "Usage: hashtag_retweet_bot [tag_to_watch]"
+if ARGV.length < 1
+  puts "Usage: hashtag_retweet_bot [tag_to_watch] [seconds_between_updates]"
+  puts "If you haven't created the database table, run:"
+  puts "hashtag_retweet_bot create_db_table"
   exit
 end
 
-tag = ARGV.first
+tag = ARGV[0]
+seconds = ARGV[1].to_i || 180
 if tag.downcase == 'create_db_table'
+  puts "Creating the database"
   require File.join(File.dirname(__FILE__), '..', 'create_db_table')
 else
-  bot = HashtagRetweetBot.new(tag)
+  puts "Launching the twitterbot to track \##{tag} every #{seconds} seconds"
+  bot = HashtagRetweetBot.new(tag, seconds)
   bot.run
 end

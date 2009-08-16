@@ -13,11 +13,13 @@ end
 #  1. Listen to an rss feed and store that stuff
 #  2. Work out which tweets need to be tweeted by the bot
 #  3. send the tweets and mark them as 'tweeted'
+#  4. repeat ad nauseam every x seconds (as indicated, 180 is recommended)
 #
 
 class HashtagRetweetBot
-  def initialize(tag)
+  def initialize(tag, seconds=180)
     @tag = tag
+    @seconds = seconds
   end
 
   def run
@@ -56,7 +58,7 @@ class HashtagRetweetBot
           end
         rescue
         end
-        sleep(60)
+        sleep(@seconds)
       end
     end
 
