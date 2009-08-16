@@ -17,8 +17,8 @@ Create the database:
 Create a directory where you will run the bot from, and a config directory with 2 files in it: _database.yml_ for your database settings and _bot.yml_ for the login/password of the twitter account.
 
     mkdir -p bot_for_my_conference/config
-		cd config/bot_for_my_conference
-		touch database.yml bot.yml
+    cd config/bot_for_my_conference
+    touch database.yml bot.yml
 
 Put the credentials for the twitter account in _bot.yml_:
 
@@ -56,8 +56,8 @@ Example:
 
 Some twitterbots using hashtag_retweet_bot:
 
-    http://twitter.com/euruko_bot
-    http://twitter.com/confrorbot
+    [@euruko_bot](http://twitter.com/euruko_bot)
+    [@confrorbot](http://twitter.com/confrorbot)
 
 ## Credits
 
