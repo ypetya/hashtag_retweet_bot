@@ -56,8 +56,8 @@ Example:
 
 Some twitterbots using hashtag_retweet_bot:
 
-    [@euruko_bot](http://twitter.com/euruko_bot)
-    [@confrorbot](http://twitter.com/confrorbot)
+[@euruko_bot](http://twitter.com/euruko_bot)
+[@confrorbot](http://twitter.com/confrorbot)
 
 ## Credits
 
