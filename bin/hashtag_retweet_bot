@@ -10,12 +10,12 @@ if ARGV.length < 1
 end
 
 tag = ARGV[0]
-seconds = ARGV[1].to_i || 180
+seconds = ARGV[1] || 180
 if tag.downcase == 'create_db_table'
   puts "Creating the database"
   require File.join(File.dirname(__FILE__), '..', 'create_db_table')
 else
   puts "Launching the twitterbot to track \##{tag} every #{seconds} seconds"
-  bot = HashtagRetweetBot.new(tag, seconds)
+  bot = HashtagRetweetBot.new(tag, seconds.to_i)
   bot.run
 end
