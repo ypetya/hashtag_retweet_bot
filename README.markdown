@@ -2,13 +2,13 @@
 
 A bot that retweets all tweets tagged by a certain hashtag. Ideal for conferences, meetup groups, communities, etc.
 
-As an example, let's say you want to retweet every twitt found with the hashtag #icecream every 5 minutes (300 seconds). This ruby gem will let you do it as easily as running:
+As an example, let's say you want to retweet every tweet found with the hashtag #icecream every 5 minutes (300 seconds). This ruby gem will let you do it as easily as running:
 
     hashtag_retweet_bot icecream 300
 
 ## Installation
 
-    gem install jaimeiniesta-hashtag_retweet_bot --source http://gems.github.com
+    gem install balinterdi-hashtag_retweet_bot --source http://gems.github.com
 
 Create the database:
 
@@ -58,9 +58,10 @@ Some twitterbots using hashtag_retweet_bot:
 
 [@euruko_bot](http://twitter.com/euruko_bot)
 [@confrorbot](http://twitter.com/confrorbot)
+[The bot for the Budapest Ruby User Group](http://twitter.com/budapestrb)
 
 ## Credits
 
-Original idea and script by [Mark Connell](http://github.com/mconnell) for Scotland on Rails 2009. Customization for Euruko '09, and some improvements by [Jaime Iniesta](http://github.com/jaimeiniesta). Some improvements and gemification by [Balint Erdi](http://github.com/balinterdi). 
+Original idea and script by [Mark Connell](http://github.com/mconnell) for Scotland on Rails 2009. Customization for Euruko '09, and some improvements by [Jaime Iniesta](http://github.com/jaimeiniesta). Some improvements and gemification by [Balint Erdi](http://github.com/balinterdi).
 
-Please send feedback and bug reports to <jaimeiniesta@gmail.com>
+Please send feedback and bug reports to <balint.erdi@gmail.com>
