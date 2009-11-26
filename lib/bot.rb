@@ -3,6 +3,8 @@ require 'twibot' # our bot helper
 require 'active_record' # db
 require 'feedzirra' # feed helper
 require 'yaml'
+# sudo gem install rtranslate --source http://gems.github.com
+require 'rtranslate'
 
 class Tweets < ActiveRecord::Base
 end
@@ -47,6 +49,8 @@ class HashtagRetweetBot
               message = tweet.title.gsub(%r{#(#{@tag})\s*$}i, '').rstrip
               # strip only the # anywhere else (since it is part of the tweet)
               message = message.gsub(%r{#(#{@tag})}i, '\1')
+              # doing some magick like babelfish does :)
+              message = Translate.t(message,'','en')
               if origin.size + message.size  <= 135
                 twitter.status(:post, "RT @#{origin}: #{message}")
               else
