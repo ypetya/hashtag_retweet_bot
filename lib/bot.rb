@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'twibot' # our bot helper
+require 'lib/twibot' # our bot helper
 require 'active_record' # db
 require 'feedzirra' # feed helper
 require 'yaml'

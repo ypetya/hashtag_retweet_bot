@@ -6,6 +6,26 @@ As an example, let's say you want to retweet every tweet found with the hashtag 
 
     hashtag_retweet_bot icecream 300
 
+## Preresquites
+
+There are several preresquites:
+
+* feedzirra
+* twibot( -> twitter4r )
+* activerecord
+* rtranslate
+
+I copied the following gems lib into the lib directory becouse there was a CONFLICT between different twitter wrappers:
+
+* twibot 0.1.7
+ - included standalone version in lib directory
+* mbbx6spp-twitter4r (>= 0.3.1)
+
+## Difference between the original source (@balinterdi) and mine
+
+1. rtranslate gem dependency and translateing at lib/bot.rb:52-53
+2. lib directory contains twibot 0.1.7 and mbbx6spp-twitter4r
+
 ## Installation
 
     gem install balinterdi-hashtag_retweet_bot --source http://gems.github.com
